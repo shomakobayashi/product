@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <meta charset="utf-8"/>
     <link href="/static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet"/>
     <link href="/static/css/training.css" th:href="@{/css/training.css}" rel="stylesheet"/>
@@ -14,13 +15,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="mx-auto">
-            <a th:href="@{'/read/init'}">商品一覧</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="mx-auto">
-            <a th:href="@{'/create/init'}">商品登録</a>
+        <div class="col-12 mx-auto">
+            <a th:href="@{/read/init}">商品一覧</a>
+            <!--<h2 class="text-center pb-4" id="orange">商品一覧</h2>-->
         </div>
     </div>
 </div>

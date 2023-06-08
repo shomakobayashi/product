@@ -1,22 +1,16 @@
 package com.practice.demo.entity;
-
 import javax.persistence.*;
 
-/**
- * 商品エンティティ。
- */
 @Entity
-@Table(name = "items")
+@Table(name ="items")
 public class Item {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name ="id")
     private int id;
 
     @Column(name = "name", nullable = false)
     private String name;
-
     @Column(name = "price", nullable = false)
     private int price;
 

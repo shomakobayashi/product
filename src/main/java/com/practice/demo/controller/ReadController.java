@@ -10,37 +10,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 /**
- * Readコントローラ。
+ * Readコントローラー。
  */
 @Controller
 @RequestMapping(value = "/read")
 public class ReadController {
 
-    /** Readサービス */
+    /**Readサービス*/
     private final ReadService service;
 
-    /** コンストラクタ */
+    /**　コンストラクタ*/
     @Autowired
-    public ReadController(ReadService service) {
+    public ReadController(ReadService service){
         this.service = service;
     }
-
-    /**
-     * 商品一覧初期表示。
-     *
-     * @param model モデル
-     * @return Path
-     */
     @RequestMapping(value = "/init")
-    public String init(Model model) {
-        // 表示用の日付を取得
+    public String init(Model model){
+        //表示用日付の取得
         String displayDate = this.service.getDisplayDate();
         model.addAttribute("displayDate", displayDate);
 
-        // 全商品のリストを取得
+        //全商品のリストを取得
         List<Item> items = this.service.findAllItems();
         model.addAttribute("items", items);
-
         return "itemList";
     }
+
+
+
+
 }
